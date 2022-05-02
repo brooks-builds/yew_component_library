@@ -4,18 +4,9 @@ on:
   - pull_request
 jobs:
   check:
-    if: github.event_name == "pull_request"
+    if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - name: Run Cargo check
         run: cargo check
-  # test:
-  #   if: github.event_name == "pull_request"
-  #   runs-on: ubuntu-latest
-  # deploy:
-  #   needs:
-  #     - lint
-  #     - test
-  #   if: github.event_name == "push" && github.ref_name == "main"
-  #   runs-on: ubuntu-latest
