@@ -26,3 +26,15 @@ jobs:
         run: |
           trunk serve &
           npx cypress run
+  test_deploy:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    needs:
+      - test
+      - check
+    steps:
+      - uses: actions/checkout@v3
+      - uses: katyo/publish-crates@v1
+        with:
+          registry-token: ${{ secrets.CARGO_REGISTRY_TOKEN }}
+          dry-run: true
