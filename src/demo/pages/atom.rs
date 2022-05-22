@@ -1,5 +1,10 @@
 use crate::{
-    atoms::{page_title::PageTitle, sub_title::SubTitle, yr_link::YrLink},
+    atoms::{
+        icon::image_icon::{ImageIcon, ImageIconName},
+        page_title::PageTitle,
+        sub_title::SubTitle,
+        yr_link::YrLink,
+    },
     demo::router::Route,
 };
 use yew::prelude::*;
@@ -13,6 +18,12 @@ pub fn atom_page() -> Html {
           <SubTitle data_test="subtitle">{"Links"}</SubTitle>
           <div>
             <YrLink data_test="yew-router-link" to={Route::Home}>{"Yew Router link to another page"}</YrLink>
+          </div>
+        </div>
+        <div>
+          <SubTitle>{"Icons"}</SubTitle>
+          <div>
+            <ImageIcon image={ImageIconName::Brookzerker} data_test="brooks-builds-icon" />
           </div>
         </div>
       </section>

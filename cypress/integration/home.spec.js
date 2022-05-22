@@ -22,4 +22,10 @@ describe("home page for component library", () => {
       .get('[data-test="subtitle"]')
       .should('contain', 'Links');
   })
+
+  it('has a Brooks Builds Icon', () => {
+    cy
+      .visit('/atoms')
+      .get('[data-test="brooks-builds-icon"]')
+  })
 })
