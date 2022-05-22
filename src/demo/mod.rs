@@ -12,6 +12,7 @@ pub fn example_app() -> Hmtl {
       <div>
         <BrowserRouter>
           <YrLink data_test="link-to-atoms" to={Route::Atoms}>{"Atom Components"}</YrLink>
+          <YrLink to={Route::Molecules}>{"Molecule Components"}</YrLink>
           <Switch<Route> render={Switch::render(switch)} />
         </BrowserRouter>
       </div>

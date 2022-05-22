@@ -3,17 +3,17 @@ describe('small groups of atoms together', () => {
     cy
       .visit('/molecules')
       .get('[data-test="page-title"]')
-      .should('contain', 'Molecule Components');
+      .should('contain', 'Molecule Components')
+      .get('[data-test="navbar-title"]')
+      .should('contain', 'Navbar')
   });
 
-  // it('navbar', () => {
-  //   cy
-  //     .visit('/molecules')
-  //     .get('[data-test="navbar-title"]')
-  //     .should('contain', 'Navbar')
-  //     .get('[data-test="navbar-home"]')
-  //     .click()
-  //     .url()
-  //     .should('not.contain', '/molecules')
-  // })
+  it('navbar', () => {
+    cy
+      .visit('/molecules')
+      .get('[data-test="navbar-icon"]')
+      .click()
+      .url()
+      .should('not.contain', '/molecules')
+  })
 })
