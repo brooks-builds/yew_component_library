@@ -14,5 +14,12 @@ describe("home page for component library", () => {
       .visit("/atoms")
       .get('[data-test="page-title"]')
       .should('contain', 'Atom Components');
+  });
+
+  it('has a subtitle', () => {
+    cy
+      .visit('/atoms')
+      .get('[data-test="subtitle"]')
+      .should('contain', 'Links');
   })
 })
